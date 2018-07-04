@@ -103,7 +103,7 @@ if NOT EXIST c:\windows\twain_32\sample2 mkdir c:\windows\twain_32\sample2
     <ClCompile>
       <AdditionalOptions>/GR %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.;..;..\src\GeneratedFiles\;..\..\pub\external\include\;..\..\Common;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;..;..\src\GeneratedFiles\;..\..\pub\external\include\;..\..\Common;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;STRICT;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -114,7 +114,7 @@ if NOT EXIST c:\windows\twain_32\sample2 mkdir c:\windows\twain_32\sample2
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>user32.lib;FreeImage.lib;qtmaind.lib;QtCored4.lib;QtGuid4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;FreeImage.lib;qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5Widgetsd.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).ds</OutputFile>
       <AdditionalLibraryDirectories>..\..\pub\external\lib;..\..\pub\lib;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>..\src\TWAINDS.def</ModuleDefinitionFile>
@@ -145,7 +145,7 @@ if NOT EXIST c:\windows\twain_64\sample2 mkdir c:\windows\twain_64\sample2
     <ClCompile>
       <AdditionalOptions>/GR %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.;..;..\src\GeneratedFiles\;..\..\pub\external\include\;..\..\Common;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;..;..\src\GeneratedFiles\;..\..\pub\external\include\;..\..\Common;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;STRICT;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -156,7 +156,7 @@ if NOT EXIST c:\windows\twain_64\sample2 mkdir c:\windows\twain_64\sample2
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>User32.lib;FreeImagedx64.lib;qtmaind.lib;QtCored4.lib;QtGuid4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>User32.lib;FreeImagedx64.lib;qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5Widgetsd.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName)64.ds</OutputFile>
       <AdditionalLibraryDirectories>..\..\pub\external\lib;..\..\pub\lib;$(QTDIR_64)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>..\src\TWAINDS.def</ModuleDefinitionFile>
@@ -179,14 +179,14 @@ copy "$(ProjectDir)\..\..\pub\bin\TWAIN_logo.png" c:\windows\twain_64\sample2
       <Command>if NOT EXIST "$(ProjectDir)\..\pub\bin" mkdir "$(ProjectDir)\..\pub\bin"</Command>
     </PreBuildEvent>
     <ClCompile>
-      <AdditionalIncludeDirectories>.;..;..\src\GeneratedFiles\;..\..\pub\external\include\;..\..\Common;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;..;..\src\GeneratedFiles\;..\..\pub\external\include\;..\..\Common;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;STRICT;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeader />
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>User32.lib;FreeImage.lib;qtmain.lib;QtCore4.lib;QtGui4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>User32.lib;FreeImage.lib;qtmain.lib;Qt5Core.lib;Qt5Gui.lib;Qt5Widgets.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).ds</OutputFile>
       <AdditionalLibraryDirectories>..\..\pub\external\lib;..\..\pub\lib;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>..\src\TWAINDS.def</ModuleDefinitionFile>
@@ -212,14 +212,14 @@ copy "$(ProjectDir)\..\..\pub\external\bin\FreeImage.dll" "$(ProjectDir)\..\pub\
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>.;..;..\src\GeneratedFiles\;..\..\pub\external\include\;..\..\Common;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;..;..\src\GeneratedFiles\;..\..\pub\external\include\;..\..\Common;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;STRICT;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeader />
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>User32.lib;FreeImagex64.lib;qtmain.lib;QtCore4.lib;QtGui4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>User32.lib;FreeImagex64.lib;qtmain.lib;Qt5Core.lib;Qt5Gui.lib;Qt5Widgets.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName)64.ds</OutputFile>
       <AdditionalLibraryDirectories>..\..\pub\external\lib;..\..\pub\lib;$(QTDIR_64)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>..\src\TWAINDS.def</ModuleDefinitionFile>
