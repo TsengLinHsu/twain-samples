@@ -1,9 +1,14 @@
 #ifndef QT_MAINFORM_H
 #define QT_MAINFORM_H
 #include "QT_UI.h"
-
-#include <QtWidgets/QDialog>
 #include <QDoubleValidator>
+
+#include <QtGlobal>
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
+#include <QtGui>
+#else
+#include <QtWidgets>
+#endif
 
 namespace Ui
 {
